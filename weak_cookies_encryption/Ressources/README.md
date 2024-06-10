@@ -2,16 +2,16 @@
 
 ## Exploit
 
-
-When visiting the site, we looked up the storage elements and we found a cookie named "I_am_admin" with the following encrypted value :
-```
+Upon inspecting the site's storage elements, we discovered a cookie named **I_am_admin** with the following encrypted value:
+``` sh
 b326b5062b2f0e69046810717534cb09
 ```
+![Cookie](ScreenshotCookie.png)
 
-![alt text](ScreenshotCookie.png "Cookie")
+Using an encryption/decryption tool like [md5decrypt.net](https://md5decrypt.net/), we decrypted the value of this cookie at obtained **false**. 
 
-Using this [encryption/decryption website](https://md5decrypt.net/), we determined that the value of this cookie was "false". We therefore, encrypted the value "true" and replaced the cookie's value with it. When refreshing the pge, the following pop up appeared, displaying a new flag as shown below.
+By deduction, we then encrypted the value **true** and replaced the cookie's value with it. Upon refreshing the page, a pop-up appeared, displaying a new flag:
 
-![alt text](ScreenshotFlag.png "Flag")
+![Flag](ScreenshotFlag.png)
 
 
