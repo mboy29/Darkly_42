@@ -1,7 +1,5 @@
 import fetch from 'node-fetch';
 import cheerio from 'cheerio';
-import fs from 'fs';
-import path from 'path';
 
 async function scrappingRecursive(url) {
     try {
@@ -27,5 +25,18 @@ async function scrappingRecursive(url) {
     }
 }
 
-const baseUrl = 'http://10.43.200.97/.hidden/';
-scrappingRecursive(baseUrl);
+function main(ipAddress) {
+    if (!ipAddress) {
+        console.error('Please provide only an IP address as a parameter.');
+        process.exit(1);
+    }
+    const baseUrl = `http://${ipAddress}/.hidden/`;
+    scrappingRecursive(baseUrl);
+}
+
+if (process.argv.length !== 3) {
+    console.error('Please provide only an IP address as a parameter.');
+    process.exit(1);
+}
+const ipAddress = process.argv[2];
+main(ipAddress);

@@ -1,13 +1,1 @@
-B9E775A0291FED784A2D9680FCFAD7EDD6B8CDF87648DA647AAF4BBA288BCAB3### Unvalidated Redirects and Forwards
-
-##Exploit
-
-The main page of the website includes some redirections to social media accounts, seach as Facebook, Twitter and Instagram. By replacing the 'site' element in the HTML below by any other URL or a blank variable, the website redirects us to a page that displays a flag (this works on any of the social media redirection).
-
-```
-<a href="index.php?page=redirect&amp;site=facebook" class="icon fa-facebook"></a>
-
-<a href="index.php?page=redirect&amp;site=https://youtube.com" class="icon fa-facebook"></a>
-
-<a href="index.php?page=redirect&amp;site=" class="icon fa-facebook"></a>
-```
+B9E775A0291FED784A2D9680FCFAD7EDD6B8CDF87648DA647AAF4BBA288BCAB3
