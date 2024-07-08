@@ -15,6 +15,7 @@ async function scrappingRecursive(url) {
                 const readmeText = await readmeResponse.text();
                 if (/flag/.test(readmeText)) {
                     console.log(readmeText);
+                    process.exit(1);
                 }
             } else if (finalLink !== '../') {
                 await scrappingRecursive(url + finalLink);
